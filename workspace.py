@@ -13,13 +13,26 @@ t = 0.1 # thickness coils
 
 """ Manual definition """
 '''
-tokamak.add_active_coil(coil_name="solenoid", coil_part="", center=(0.210, 0), dR=0.030, dZ=0.80, radius=(0,0), geometry=(1, 1))
+# Add active coils
+tokamak.add_active_coil(coil_name="solenoid", coil_part="", center=(0.210, 0), dR=0.030, dZ=0.80, individual_windings_size=(0,0), geometry=(1, 1))
 tokamak.add_active_coil(coil_name="P1_u", coil_part="upper", center=(R-r+t/2, H+t), dR=0.1, dZ=0.1, geometry=(1,1))
 tokamak.add_active_coil(coil_name="P1_l", coil_part="lower", center=(R-r+t/2, -H-t), dR=0.1, dZ=0.1, geometry=(1,1))
 tokamak.add_active_coil(coil_name="P2_u", coil_part="upper", center=(R+r, H+t), dR=0.1, dZ=0.1, geometry=(1,1))
 tokamak.add_active_coil(coil_name="P2_l", coil_part="lower", center=(R+r, -H-t), dR=0.1, dZ=0.1, geometry=(1,1))
 tokamak.add_active_coil(coil_name="P3_u", coil_part="upper", center=(R+r+t*1.5, h+t/2), dR=0.1, dZ=0.1, geometry=(1,1))
 tokamak.add_active_coil(coil_name="P3_l", coil_part="lower", center=(R+r+t*1.5, -h-t/2), dR=0.1, dZ=0.1, geometry=(1,1))
+
+# Add passive structure
+tokamak.add_passive_coil((R-r-0.005, -r-h-0.005 +t), (R-r-0.005, r+h+0.005 -t), thickness=0.01)
+tokamak.add_passive_coil((R-r-0.005 +t, r+h+0.005), (R+r+0.005 -t, r+h+0.005), thickness=0.01)
+tokamak.add_passive_coil((R+r+0.005, r+h+0.005 -t), (R+r+0.005, -r-h-0.005 +t), thickness=0.01)
+tokamak.add_passive_coil((R+r+0.005 -t, -r-h-0.005), (R-r-0.005 +t, -r-h-0.005), thickness=0.01)
+
+tokamak.add_passive_coil((R-r-0.005 +t, -r-h-0.005), (R-r-0.005, -r-h-0.005 +t), thickness=0.01)
+tokamak.add_passive_coil((R-r-0.005, r+h+0.005 -t), (R-r-0.005 +t, r+h+0.005), thickness=0.01)
+tokamak.add_passive_coil((R+r+0.005 -t, r+h+0.005), (R+r+0.005, r+h+0.005 -t), thickness=0.01)
+tokamak.add_passive_coil((R+r+0.005, -r-h-0.005 +t), (R+r+0.005 -t, -r-h-0.005), thickness=0.01)
+
 
 n = 15
 

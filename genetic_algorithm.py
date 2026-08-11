@@ -99,7 +99,7 @@ class TokamakCoilOptimizer:
                         center_range: tuple,
                         dR_range: tuple,
                         dZ_range: tuple,
-                        # radius, locked to (0,0)
+                        # individual_windings_size, locked to (0,0)
                         geometry: tuple = (1,1),
                         polarity: int = 1,
                         multiplier: int = 1,
