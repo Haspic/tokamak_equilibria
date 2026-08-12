@@ -75,8 +75,8 @@ miller = miller(elongation=1.5,
 R, Z = miller.get_coordinates(np.arange(0,2*np.pi, 2*np.pi/10))
 isoflux_set = np.array([[R, Z]])
 
-# null_points = None
-null_points = miller.get_coordinates(np.array([np.pi/1.9, np.pi/1.9]))
+null_points = None
+# null_points = miller.get_coordinates(np.array([np.pi/1.9, np.pi/1.9]))
 
 constraints = (null_points, isoflux_set)
 
