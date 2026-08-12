@@ -129,7 +129,7 @@ class TokamakCoilOptimizer:
         self.coil_constants.append({
             "coil_name": coil_name,
             "coil_part": coil_part,
-            "radius": (0,0),
+            "individual_windings_size": (0,0),
             "geometry": geometry,
             "polarity": polarity,
             "multiplier": multiplier
@@ -168,7 +168,7 @@ class TokamakCoilOptimizer:
 
         self.coupled_coil_constants.append({
             "coil_name": coils_name,
-            "radius": (0,0),
+            "individual_windings_size": (0,0),
             "geometry": geometry,
             "polarity": polarity,
             "multiplier": multiplier
